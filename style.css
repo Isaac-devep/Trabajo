@@ -1,0 +1,129 @@
+:root {
+  --bg-color: #000; /* Fondo negro */
+  --sun-color: #ffd700; /* Sol */
+  --text-color: #fff; /* Texto blanco */
+  --tooltip-bg: rgba(0, 0, 0, 0.9); /* Fondo del tooltip */
+  --tooltip-color: #fff; /* Texto del tooltip */
+  --mercury-color: #b0b0b0;
+  --venus-color: #ffa500;
+  --earth-color: #0077be;
+  --mars-color: #ff4500;
+  --jupiter-color: #d2b48c;
+  --saturn-color: #f4a460;
+  --uranus-color: #40e0d0;
+  --neptune-color: #4169e1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.solar-system {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Sol */
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: var(--sun-color);
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--sun-color);
+  transition: transform 0.3s ease;
+}
+
+/* Planetas */
+.planet {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.planet:hover {
+  transform: scale(1.5);
+}
+
+/* Posiciones de los planetas */
+.mercury {
+  top: 20%;
+  left: 30%;
+  background: var(--mercury-color);
+}
+
+.venus {
+  top: 30%;
+  left: 60%;
+  background: var(--venus-color);
+}
+
+.earth {
+  top: 50%;
+  left: 70%;
+  background: var(--earth-color);
+}
+
+.mars {
+  top: 60%;
+  left: 40%;
+  background: var(--mars-color);
+}
+
+.jupiter {
+  top: 10%;
+  left: 20%;
+  background: var(--jupiter-color);
+}
+
+.saturn {
+  top: 70%;
+  left: 80%;
+  background: var(--saturn-color);
+}
+
+.uranus {
+  top: 80%;
+  left: 50%;
+  background: var(--uranus-color);
+}
+
+.neptune {
+  top: 15%;
+  left: 75%;
+  background: var(--neptune-color);
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-color);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+
+
+

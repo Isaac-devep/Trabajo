@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Solar Interactivo</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="solar-system">
+        <div class="sun" data-message="Eres mi centro, mi luz y mi calor."></div>
+        <div class="planet mercury" data-message="Isabella, mi admiración por ti es como Mercurio, siempre cerca de mi corazón."></div>
+        <div class="planet venus" data-message="Tu belleza es como Venus, radiante e inigualable."></div>
+        <div class="planet earth" data-message="Eres mi Tierra, mi hogar, mi todo."></div>
+        <div class="planet mars" data-message="Tu valentía es como Marte, siempre conquistando mi corazón."></div>
+        <div class="planet jupiter" data-message="Tu amor es como Júpiter, gigante e inmenso."></div>
+        <div class="planet saturn" data-message="Tus cualidades son como los anillos de Saturno, infinitas y perfectas."></div>
+        <div class="planet uranus" data-message="Tu dulzura es como Urano, única y maravillosa."></div>
+        <div class="planet neptune" data-message="Eres como Neptuno, calma y paz en mi océano de emociones."></div>
+        <div class="tooltip" id="tooltip">Texto aquí</div>
+    </div>
+
+    <script>
+        const planets = document.querySelectorAll('.planet, .sun');
+        const tooltip = document.getElementById('tooltip');
+
+        planets.forEach(planet => {
+            planet.addEventListener('mouseenter', (e) => {
+                const message = planet.getAttribute('data-message');
+                tooltip.textContent = message;
+
+                // Posicionar el tooltip cerca del planeta
+                const rect = planet.getBoundingClientRect();
+                tooltip.style.left = `${rect.left + rect.width / 2}px`;
+                tooltip.style.top = `${rect.top - 30}px`;
+                tooltip.style.opacity = 1; // Mostrar tooltip
+            });
+
+            planet.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0; // Ocultar tooltip
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
